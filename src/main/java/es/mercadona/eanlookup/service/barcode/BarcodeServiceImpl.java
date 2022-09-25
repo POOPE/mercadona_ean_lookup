@@ -3,6 +3,7 @@ package es.mercadona.eanlookup.service.barcode;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import es.mercadona.eanlookup.domain.dto.EAN;
 import es.mercadona.eanlookup.domain.dto.Item;
@@ -34,11 +35,12 @@ public class BarcodeServiceImpl extends AbstractCrudService<BarcodeEntity, Strin
 	}
 
 	@Override
+	@Transactional
 	public EAN findEAN(String EAN) {
 		EAN res = new EAN();
 		String supplierCode = EAN.substring(0, 7);
-		String itemCode = EAN.substring(7, 11);
-		String activityCode = EAN.substring(12, 12);
+		String itemCode = EAN.substring(7, 12);
+		String activityCode = EAN.substring(12, 13);
 
 		ActivityEntity activity = activityService.findByReferenceCode(activityCode);
 		SupplierEntity supplier = supplierService.findById(Integer.valueOf(supplierCode.replaceFirst("^0+(?!$)", "")));
@@ -48,7 +50,7 @@ public class BarcodeServiceImpl extends AbstractCrudService<BarcodeEntity, Strin
 		res.setDestination(mapper.map(activity, Activity.class));
 		res.setSupplier(mapper.map(supplier, Supplier.class));
 		res.setItem(mapper.map(item, Item.class));
-		return null;
+		return res;
 	}
 
 }
