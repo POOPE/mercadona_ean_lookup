@@ -1,0 +1,55 @@
+server: 
+  port: 8080
+  servlet:
+    contextPath: /api/eanlookup
+  
+spring:
+  application:
+    name: "Mercadona EAN Lookup"
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:mercadonadb
+    username: sa
+    password: 
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+security:
+  jwt:
+    secret: 00934059203499128203471982733981729837988779879asdf9789asdfasdkj__5dsecretAKHFlkn_fdakjLKHJLjlkjlkjlk:LKJJLKJ_????.fgasdfkj
+    validity: 86400000
+springdoc:
+  api-docs: 
+    path: /api-docs
+  packagesToScan: es.mercadona.eanlookup.controller
+  swagger-ui:
+    path: /documentation
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+
+    
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE

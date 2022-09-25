@@ -1,0 +1,100 @@
+{
+	"prettyPrint": true,
+	"cacheTTL": 0,
+	"openAPI": {
+		"servers": [
+			{
+				"url": "http://localhost:8080/api/eanlookup",
+				"description": "Local test"
+			}
+		],
+		"info": {
+			"version": "1.0",
+			"title": "Mercadona EAN lookup API",
+			"description": "Sandbox for EAN lookup API"
+		},
+		"components": {
+			"securitySchemes": {
+				"comerzzia_jwt_auth": {
+					"description": "JWT Authentication",
+					"type": "http",
+					"scheme": "bearer",
+					"bearerFormat": "JWT"
+				}
+			},
+			"schemas": {
+				"JwtRequest": {
+					"type": "object",
+					"properties": {
+						"username": {
+							"type": "string"
+						},
+						"password": {
+							"type": "string"
+						}
+					}
+				},
+				"JwtResponse": {
+					"type": "object",
+					"properties": {
+						"token": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"security": [
+			{
+				"jwt_auth": []
+			}
+		],
+		"tags": [
+			{
+				"name": "Security",
+				"description": "Security Services"
+			}
+		],
+		"paths": {
+			"/login": {
+				"post": {
+					"tags": [
+						"Security"
+					],
+					"summary": "Login",
+					"security": [],
+					"requestBody": {
+						"description": "Login information",
+						"required": true,
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/JwtRequest"
+								},
+								"example": {
+									"username": "admin",
+									"password": "admin"
+								}
+							}
+						}
+					},
+					"responses": {
+						"200": {
+							"description": "Success",
+							"content": {
+								"application/json": {
+									"schema": {
+										"$ref": "#/components/schemas/JwtResponse"
+									}
+								}
+							}
+						},
+						"401": {
+							"description": "Invalid credentials"
+						}
+					}
+				}
+			}
+		}
+	}
+}
