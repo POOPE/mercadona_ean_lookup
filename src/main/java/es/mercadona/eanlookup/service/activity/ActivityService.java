@@ -6,4 +6,5 @@ import es.mercadona.eanlookup.service.CrudService;
 public interface ActivityService extends CrudService<ActivityEntity,Integer>{
 
 	ActivityEntity findByReferenceCode(String referenceCode);
+	
 }

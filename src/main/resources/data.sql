@@ -9,5 +9,8 @@ INSERT INTO ACTIVITY (id,title,reference_code) VALUES (1,'Mercadona Portugal','^
 INSERT INTO ACTIVITY (id,title,reference_code) VALUES (2,'Almacenes','^[7]$');
 INSERT INTO ACTIVITY (id,title,reference_code) VALUES (3,'Oficinas Mercadona','^[8]$'); 
 INSERT INTO SUPPLIER (id,title,address) VALUES (0,'DEFAULT',NULL);
+INSERT INTO SUPPLIER (id,title,address) VALUES (4444444,'Covap','Direccion');
 INSERT INTO SUPPLIER (id,title,address) VALUES (8437008,'Hacendado','Calle Valencia, 5. Tabernes Blanques, Valencia. España');
-INSERT INTO ITEM (id,title,description,supplier_id) VALUES (1,'Gazpacho','Gazpacho fresco',8437008);
+INSERT INTO ITEM (id,title,description) VALUES (1,'Gazpacho','Gazpacho fresco');
+INSERT INTO ITEM (id,title,description) VALUES (2,'Queso','Queso fresco');
+INSERT INTO ITEM (id,title,description) VALUES (3,'Leche','Leche entera');

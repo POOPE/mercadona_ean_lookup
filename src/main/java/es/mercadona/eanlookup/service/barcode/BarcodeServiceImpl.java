@@ -6,21 +6,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.mercadona.eanlookup.domain.dto.EAN;
-import es.mercadona.eanlookup.domain.dto.Item;
 import es.mercadona.eanlookup.domain.dto.Supplier;
 import es.mercadona.eanlookup.domain.dto.activity.Activity;
+import es.mercadona.eanlookup.domain.dto.item.Item;
 import es.mercadona.eanlookup.domain.entity.activity.ActivityEntity;
-import es.mercadona.eanlookup.domain.entity.barcode.BarcodeEntity;
 import es.mercadona.eanlookup.domain.entity.item.ItemEntity;
 import es.mercadona.eanlookup.domain.entity.supplier.SupplierEntity;
-import es.mercadona.eanlookup.repository.BarcodeRepository;
-import es.mercadona.eanlookup.service.AbstractCrudService;
 import es.mercadona.eanlookup.service.activity.ActivityService;
 import es.mercadona.eanlookup.service.item.ItemService;
 import es.mercadona.eanlookup.service.supplier.SupplierService;
 
 @Service
-public class BarcodeServiceImpl extends AbstractCrudService<BarcodeEntity, String> implements BarcodeService {
+public class BarcodeServiceImpl  implements BarcodeService {
 
 	@Autowired
 	ActivityService activityService;
@@ -28,11 +25,8 @@ public class BarcodeServiceImpl extends AbstractCrudService<BarcodeEntity, Strin
 	SupplierService supplierService;
 	@Autowired
 	ItemService itemService;
-
 	@Autowired
-	protected BarcodeServiceImpl(BarcodeRepository repo, ModelMapper mapper) {
-		super(repo, mapper);
-	}
+	ModelMapper mapper;
 
 	@Override
 	@Transactional

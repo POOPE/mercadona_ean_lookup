@@ -5,4 +5,5 @@ import es.mercadona.eanlookup.service.CrudService;
 
 public interface ItemService extends CrudService<ItemEntity,Integer>{
 
+	
 }
