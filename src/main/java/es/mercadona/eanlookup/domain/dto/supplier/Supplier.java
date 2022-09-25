@@ -1,6 +1,5 @@
-package es.mercadona.eanlookup.domain.dto.item;
+package es.mercadona.eanlookup.domain.dto.supplier;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,18 +9,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class NewItem {
+public class Supplier {
 
-	@NotNull
-	@Max(99999)
-	Integer id;
-	
 	@NotNull
 	@NotBlank
 	@Size(max=55)
-	String title;
+	private String title;
 	
 	@NotBlank
 	@Size(max=255)
-	String description;
+	private String address;
 }

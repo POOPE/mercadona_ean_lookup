@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.mercadona.eanlookup.domain.dto.EAN;
-import es.mercadona.eanlookup.domain.dto.Supplier;
 import es.mercadona.eanlookup.domain.dto.activity.Activity;
 import es.mercadona.eanlookup.domain.dto.item.Item;
+import es.mercadona.eanlookup.domain.dto.supplier.Supplier;
 import es.mercadona.eanlookup.domain.entity.activity.ActivityEntity;
 import es.mercadona.eanlookup.domain.entity.item.ItemEntity;
 import es.mercadona.eanlookup.domain.entity.supplier.SupplierEntity;

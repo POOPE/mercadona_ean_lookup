@@ -1,5 +1,6 @@
 package es.mercadona.eanlookup.domain.dto.activity;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class NewActivity {
 
 	@NotNull
+	@Max(9)
 	Integer id;
 
 	@NotNull

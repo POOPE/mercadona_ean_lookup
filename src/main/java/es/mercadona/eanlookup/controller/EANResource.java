@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.mercadona.eanlookup.domain.dto.EAN;
 import es.mercadona.eanlookup.service.barcode.BarcodeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 
 @RestController
 @RequestMapping("/EAN")
 @Validated
+@Tag(name = "EAN", description = "EAN lookup")
 public class EANResource {
 	
 	@Autowired

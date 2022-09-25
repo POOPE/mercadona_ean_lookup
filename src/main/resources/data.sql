@@ -11,6 +11,6 @@ INSERT INTO ACTIVITY (id,title,reference_code) VALUES (3,'Oficinas Mercadona','^
 INSERT INTO SUPPLIER (id,title,address) VALUES (0,'DEFAULT',NULL);
 INSERT INTO SUPPLIER (id,title,address) VALUES (4444444,'Covap','Direccion');
 INSERT INTO SUPPLIER (id,title,address) VALUES (8437008,'Hacendado','Calle Valencia, 5. Tabernes Blanques, Valencia. España');
-INSERT INTO ITEM (id,title,description) VALUES (1,'Gazpacho','Gazpacho fresco');
-INSERT INTO ITEM (id,title,description) VALUES (2,'Queso','Queso fresco');
-INSERT INTO ITEM (id,title,description) VALUES (3,'Leche','Leche entera');
+INSERT INTO ITEM (id,title,description) VALUES (123,'Gazpacho','Gazpacho fresco');
+INSERT INTO ITEM (id,title,description) VALUES (606,'Queso','Queso fresco');
+INSERT INTO ITEM (id,title,description) VALUES (99912,'Leche','Leche entera');

@@ -3,7 +3,6 @@ package es.mercadona.eanlookup.domain.entity.activity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,7 +23,6 @@ public class ActivityEntity implements Serializable {
 	private static final long serialVersionUID = 787170979867168977L;
 	
 	@Id
-	@GeneratedValue
 	private Integer id = 0;
 	
 	private String title;
